@@ -4,6 +4,11 @@ import unittest
 def fibcalc(first: int, second: int, length: int):
     if not all(isinstance(x, int) for x in [first, second, length]):
         raise TypeError("Error: All inputs must be integers.")
+
+    if first < 0 or second < 0 or length < 0:
+        raise ValueError(
+            "Error: Fibonacci sequence is not defined for negative numbers."
+        )
     if length == 0:
         return [first]
 
