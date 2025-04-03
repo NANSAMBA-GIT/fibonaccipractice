@@ -1,8 +1,9 @@
 import unittest
 
 
-def fibcalc(first, second, length):
-
+def fibcalc(first: int, second: int, length: int):
+    if not all(isinstance(x, int) for x in [first, second, length]):
+        raise TypeError("Error: All inputs must be integers.")
     if length == 0:
         return [first]
 
